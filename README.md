@@ -3,6 +3,7 @@
 Sample programs for the Lego Mindstorms brick written in Small Basic
 
 [[https://raw.githubusercontent.com/drahmel/lego-mindstorms-small-basic/master/images/ev3-car-v1.jpg]]
+[[https://github.com/drahmel/lego-mindstorms-small-basic/blob/master/images/ev3-car-v1.jpg|alt=octocat]]
 
 ## Why?
 
