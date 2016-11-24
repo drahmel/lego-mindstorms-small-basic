@@ -1,0 +1,18 @@
+LCD.Clear()
+
+' This will drive, then turn 180 degree, then drive forward a ways
+' This is a rear-wheel drive vehicle -- the front-wheel drive didn't work very well
+
+' Drive forward
+Motor.Start("AC",-100)
+Program.Delay(3000)
+Motor.Stop("AC","True")
+
+' Turn the vehicle by turning the outside wheel (-100) and the inside wheel (80) in opposite directions
+Motor.MoveSync("AC", -100, 80, 360 * 14, "True")
+
+' Move forward
+Motor.Move("AC",  -50, 360 * 2, "False")
+
+' Write a done message to the screen
+LCD.Write(40,40, "Done.")
