@@ -18,6 +18,7 @@ For i = 60 To 10 Step -2
   'Motor.Start("AC",i)
   'Motor.Wait("AC")
 EndFor
+
 ' Stop motor
 Motor.Stop("AC","True")
 ' Display done message
