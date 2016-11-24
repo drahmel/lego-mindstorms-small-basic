@@ -1,16 +1,26 @@
 LCD.Clear()
+' Setup number of rotations
 rots = 90 * 1
 'Motor.Start("AC",10)
+
+' Accelerate to 100 strength in steps of 2
 For i = 100 To 10 Step 2
   Motor.Move("AC",  i, rots, "False")
   'Motor.Start("AC",i)
   'Motor.Wait("AC")
 EndFor
+' Do 4 rotations at current strength
 Motor.Move("AC",  i, rots*4, "False")
+
+' Decelerate to 10 in steps of 2
 For i = 60 To 10 Step -2
   Motor.Move("AC",  i, rots, "False")
   'Motor.Start("AC",i)
   'Motor.Wait("AC")
 EndFor
-Motor.Stop("AC","True") 
+' Stop motor
+Motor.Stop("AC","True")
+' Display done message
 LCD.Write(40,40, "Done.")
+
+' Improvements: Using Motor.Move slightly stutters between finishing one command and starting another. Need to get Motor.Start working
