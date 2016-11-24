@@ -2,6 +2,8 @@
 
 Sample programs for the Lego Mindstorms brick written in Small Basic
 
+[[https://raw.githubusercontent.com/drahmel/lego-mindstorms-small-basic/master/images/ev3-car-v1.jpg]]
+
 ## Why?
 
 As an engineer, I find the Lego Labview visual programming environment frustrating. There are many good reasons why professional engineers don't use visual programming environments.
