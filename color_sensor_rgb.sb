@@ -1,0 +1,33 @@
+Sensor.Wait (3)  'make sure the sensor is ready for a mode change
+Sensor.SetMode(3,4)  'will set color sensor on port 3 to mode 4: RGB values
+filename = "test_rgb_data"
+f = EV3File.OpenAppend (filename)
+While "True"
+    LCD.StopUpdate()    'don't update the screen until all the text is ready
+    LCD.Clear()
+    R=Sensor.ReadRaw(3,3)  'Obtain from sensor on port 3
+    'a matrix containing 3 values.
+    'For a bright white surface, this returns about (350,350,140)
+    LCD.Text(1,0,0, 1, "Raw RGB values:")
+    LCD.Text(1,0,10, 1, "Max = 350,350,140")
+    LCD.Text(1,0,20, 2, R[0]+","+R[1]+","+R[2])
+    
+    'scale each value so that bright white corresponds to about 255,255,255
+    S[0]=Math.Round(R[0]*255/350)  'red
+    S[1]=Math.Round(R[1]*255/350)  'green
+    S[2]=Math.Round(R[2]*255/140)  'blue
+    LCD.Text(1,0,45, 1, "Scaled to max")
+    LCD.Text(1,0,55, 1, "255,255,255:")
+    LCD.Text(1,0,65, 2, S[0]+","+S[1]+","+S[2])
+  
+    'scale each value so that bright white corresponds to about 100,100,100
+    P[0]=Math.Round(R[0]/3.5)  'red
+    P[1]=Math.Round(R[1]/3.5)  'green
+    P[2]=Math.Round(R[2]/1.4)  'blue    
+    LCD.Text(1,0,90, 1, "Scaled to max")
+    LCD.Text(1,0,100, 1, "100,100,100:")
+    LCD.Text(1,0,110, 2, P[0]+","+P[1]+","+P[2])
+    LCD.Update()
+    EV3File.WriteLine (f,  P[0]+","+P[1]+","+P[2])
+    Program.Delay(5000)  'pause 0.1 seconds
+EndWhile
