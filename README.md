@@ -10,3 +10,15 @@ Yet I didn't want to write over my Lego brick firmware with some other environme
 
 This repo will include all of the programs I make as I learn to use the Lego EV3 Mindstorms system.
 
+## What will you include?
+
+These programs will start simple and increase in complexity as I learn.
+
+## Contributions
+
+If you have any programs you want to share or improvements, please fork.
+
+## License
+
+BSD -- use them for whatever you'd like
+
