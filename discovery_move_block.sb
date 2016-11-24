@@ -1,8 +1,14 @@
 LCD.Clear()
+' Start motors A & C going backward with a strength of 50
 Motor.Start("AC",-50)
-Program.Delay(2000)   ' 3000 milliseconds
-Motor.Stop("AC","True")    ' "True" means 'apply the brake'
-'  turn motor B at speed 30 and motor C at speed 40 for a gentle left turn, with the faster motor turning 720
-'Motor.MoveSync("AC", -30, -40, 720, "True")
+' Wait for 2 seconds (2000 milliseconds) before shutting it off 
+Program.Delay(2000)
+' Stop the motor and apply the break (True)
+Motor.Stop("AC","True")
+' 
+' Do a sharp left backwards turn moving the outside when at -100 and the inside wheel at -5
+' Move both wheels 360 degrees * 4
 Motor.MoveSync("AC", -5, -100, 360 * 4, "True")
+
+' Write a done message to the screen
 LCD.Write(40,40, "Done.")
