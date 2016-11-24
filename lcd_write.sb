@@ -1,0 +1,5 @@
+LCD.Clear()
+For i = 1 To 10000
+  LCD.Write(40,40, "Hello " + i)
+  Motor.Move("AC",  -50, 180, "True")
+EndFor

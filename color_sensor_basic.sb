@@ -1,0 +1,21 @@
+Sensor.SetMode(3,2)
+
+'Make an array containing the colors, matched to the array index values
+Colors[0]="UNKNOWN"
+Colors[1]="BLACK"
+Colors[2]="BLUE"
+Colors[3]="GREEN"
+Colors[4]="YELLOW"
+Colors[5]="RED"
+Colors[6]="WHITE"
+Colors[7]="BROWN"
+
+While "True"
+    LCD.StopUpdate()
+    LCD.Clear()
+    code=Sensor.ReadRawValue(3, 0)
+    LCD.Text(1,33,40, 2, "Color "+ Code)
+    LCD.Text(1,33,75, 2, Colors[Code])
+    LCD.Update()
+    Program.Delay(100)
+EndWhile

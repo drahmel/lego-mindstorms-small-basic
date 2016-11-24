@@ -1,0 +1,16 @@
+LCD.Clear()
+rots = 90 * 1
+'Motor.Start("AC",10)
+For i = 100 To 10 Step 2
+  Motor.Move("AC",  i, rots, "False")
+  'Motor.Start("AC",i)
+  'Motor.Wait("AC")
+EndFor
+Motor.Move("AC",  i, rots*4, "False")
+For i = 60 To 10 Step -2
+  Motor.Move("AC",  i, rots, "False")
+  'Motor.Start("AC",i)
+  'Motor.Wait("AC")
+EndFor
+Motor.Stop("AC","True") 
+LCD.Write(40,40, "Done.")

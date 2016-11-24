@@ -1,0 +1,8 @@
+LCD.Clear()
+Motor.Start("AC",-50)
+Program.Delay(2000)   ' 3000 milliseconds
+Motor.Stop("AC","True")    ' "True" means 'apply the brake'
+'  turn motor B at speed 30 and motor C at speed 40 for a gentle left turn, with the faster motor turning 720
+'Motor.MoveSync("AC", -30, -40, 720, "True")
+Motor.MoveSync("AC", -5, -100, 360 * 4, "True")
+LCD.Write(40,40, "Done.")

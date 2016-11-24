@@ -1,0 +1,12 @@
+TextWindow.ForegroundColor = "Yellow"
+TextWindow.WriteLine("Hello World. Enter your name:")
+name = TextWindow.Read()
+TextWindow.WriteLine("Hello " + name)
+TextWindow.Write("Enter temperature in Fahrenheit: ")
+fahr = TextWindow.ReadNumber()
+If (Clock.Hour < 12) Then
+ TextWindow.WriteLine("Good Morning World")
+EndIf
+If (Clock.Hour >= 12) Then
+ TextWindow.WriteLine("Good Evening World")
+EndIf
