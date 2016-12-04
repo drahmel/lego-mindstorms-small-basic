@@ -1,0 +1,26 @@
+LCD.Clear()
+
+' This will drive, then turn 180 degree, then drive forward a ways
+' This is a front-wheel drive vehicle -- took the rubber off the back wheels so they can slide and then front-wd worked properly 
+
+speedForward = 100
+timeForward = 1000
+
+
+' Drive forward
+Motor.Start("AC", speedForward)
+Program.Delay(timeForward)
+Motor.Stop("AC","True")
+
+' Turn the vehicle by turning the outside wheel and the inside wheel in opposite directions
+lowerPortMotor = -10 ' A
+higherPortMotor = 100 ' C
+Motor.MoveSync("AC", lowerPortMotor, higherPortMotor, 360 * 3, "True")
+
+' Drive forward
+Motor.Start("AC", speedForward)
+Program.Delay(timeForward)
+Motor.Stop("AC","True")
+
+' Write a done message to the screen
+LCD.Write(40,40, "Done.")
